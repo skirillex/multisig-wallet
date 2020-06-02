@@ -78,7 +78,11 @@ class MultiSigWallet(IconScoreBase):
     def on_install(self, _walletOwners: str, _required: int) -> None:
         super().on_install()
 
-        wallet_owner_list = _walletOwners.replace(" ", "").split(",")
+        #hardcoded values in down here:
+
+        #wallet_owner_list = _walletOwners.replace(" ", "").split(",")
+        wallet_owner_list = ["hx3e10f8ff4eaad6b191c5310c162b073c63d104d6","hx56f809ca5c4fbc77828a1431030af71c905379c8"]
+        _required = 2
         self._check_requirement(len(wallet_owner_list), _required)
 
         for wallet_owner in wallet_owner_list:
